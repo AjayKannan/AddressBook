@@ -10,5 +10,5 @@ import com.moo.entity.ContactEntity;
 public interface  ContactRepository extends JpaRepository<ContactEntity, Long>{
 
 	@Query("SELECT c FROM ContactEntity c WHERE UPPER(c.surname) = UPPER(?1)")
-	List<ContactEntity> getEmployeeBySurName(String surname);
+	List<ContactEntity> getContactBySurname(String surname);
 }

@@ -18,7 +18,7 @@ public class ContactService {
 
 	public List<ContactBean> searchContactBySurname(String surname) {
 
-		List<ContactEntity> contactEntityList = contactRepository.getEmployeeBySurName(surname);
+		List<ContactEntity> contactEntityList = contactRepository.getContactBySurname(surname);
 
 		List<ContactBean> contactBeanList = new ArrayList<ContactBean>();
 
