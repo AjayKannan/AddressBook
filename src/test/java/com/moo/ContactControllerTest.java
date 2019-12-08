@@ -43,9 +43,9 @@ public class ContactControllerTest {
 		
 		when(contactService.searchContactBySurname("kannan")).thenReturn(contactList);
 
-		List<ContactBean> customerListActual = contactController.searchContactBySurname("kannan");
+		List<ContactBean> contactListActual = contactController.searchContactBySurname("kannan");
 
-		assertTrue(customerListActual.size() == 1);
+		assertTrue(contactListActual.size() == 1);
 	}
 	
 	/**

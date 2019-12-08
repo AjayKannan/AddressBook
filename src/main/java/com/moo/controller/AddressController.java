@@ -28,7 +28,7 @@ public class AddressController {
 	/**
 	 * Method to retrieve contact address
 	 * 
-	 * @param id customer id
+	 * @param id contact id
 	 * 
 	 * @return List of Address for the give contact
 	 *
