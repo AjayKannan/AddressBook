@@ -25,13 +25,23 @@ public class AddressController {
 	@Autowired
 	AddressService addresService;
 
+	/**
+	 * Method to retrieve contact address
+	 * 
+	 * @param id customer id
+	 * 
+	 * @return List of Address for the give contact
+	 *
+	 * @throws NoDataFoundException
+	 *             if contact id  is not have any address.
+	 */
 	@RequestMapping(value = "/v1/contact/{id}/address", method = RequestMethod.GET)
-	public List<AddressBean> retriveCustomerAddress(@PathVariable("id") long id) {
+	public List<AddressBean> getContactAddress(@PathVariable("id") long id) {
 
 		List<AddressBean> addressList = addresService.getAddressByContactId(id);
 
 		if (addressList.size() == 0) {
-			throw new NoDataFoundException("No data found for given contact Id " + id);
+			throw new NoDataFoundException("No address found for given contact Id " + id);
 		}
 
 		return addressList;
