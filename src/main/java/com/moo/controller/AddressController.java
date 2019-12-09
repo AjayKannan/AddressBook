@@ -42,7 +42,7 @@ public class AddressController {
 	 * @throws NoDataFoundException
 	 *             if contact id  does not have any address associated with it.
 	 */
-	@RequestMapping(value = "/v1/contact/{id}/address", method = RequestMethod.GET ,  produces = { MediaType.APPLICATION_JSON_VALUE})
+	@RequestMapping(value = "/v1/contact/{id}/address", method = RequestMethod.GET ,  produces = { MediaType.APPLICATION_JSON_VALUE })
 	public List<AddressBean> getContactAddress(@PathVariable("id") long id) {
 
 		List<AddressBean> addressList = addresService.getAddressByContactId(id);

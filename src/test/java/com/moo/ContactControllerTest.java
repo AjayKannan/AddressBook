@@ -20,6 +20,7 @@ import com.moo.exception.NoDataFoundException;
 import com.moo.service.ContactService;
 
 @ExtendWith(MockitoExtension.class)
+
 public class ContactControllerTest {
 
 	@InjectMocks
@@ -29,7 +30,7 @@ public class ContactControllerTest {
 	ContactService contactService;
 
 	/**
-	 * Test to check success scenario 
+	 * Test to check success scenario
 	 */
 	@Test
 	public void successScenarioTest() {
@@ -40,46 +41,44 @@ public class ContactControllerTest {
 		contactBean.setFirstName("Ajay");
 		contactBean.setSurname("Kannan");
 		contactList.add(contactBean);
-		
+
 		when(contactService.searchContactBySurname("kannan")).thenReturn(contactList);
 
 		List<ContactBean> contactListActual = contactController.searchContactBySurname("kannan");
 
 		assertTrue(contactListActual.size() == 1);
 	}
-	
+
 	/**
 	 * Test to check 404 No data found error
-	 *  
+	 * 
 	 */
 	@Test
 	public void noDataFoundTest() {
 		List<ContactBean> contactList = new ArrayList<>();
 		when(contactService.searchContactBySurname("kannan")).thenReturn(contactList);
-		
-		Assertions.assertThrows(NoDataFoundException.class, 
-				() -> contactController.searchContactBySurname("kannan"));
+
+		Assertions.assertThrows(NoDataFoundException.class, () -> contactController.searchContactBySurname("kannan"));
 	}
-	
+
 	/**
 	 * Test to check 400 Bad Request found error when no parameter is found
-	 *  
+	 * 
 	 */
 	@Test
 	public void badRequestTest() {
-		
-		Assertions.assertThrows(BadRequestException.class, 
-				() -> contactController.searchContactBySurname(""));
+
+		Assertions.assertThrows(BadRequestException.class, () -> contactController.searchContactBySurname(""));
 	}
-	
+
 	/**
 	 * Test to check 400 Bad Request error when null parameter is found
-	 *  
+	 * 
 	 */
 	@Test
 	public void badRequestWithNullSurnameTest() {
-		
-		Assertions.assertThrows(BadRequestException.class, 
-				() -> contactController.searchContactBySurname(null));
+
+		Assertions.assertThrows(BadRequestException.class, () -> contactController.searchContactBySurname(null));
 	}
+
 }
