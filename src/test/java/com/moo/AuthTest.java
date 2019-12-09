@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * 
- * Class to test basic aut for API is enabled
+ * Class to test basic Authorisation for API is enabled
  * 
  * @author Ajay
  *

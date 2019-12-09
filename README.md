@@ -1,5 +1,14 @@
 # AddressBook
 
+# Features used
+
+Spring security with basic auth (test username=user password=passsword)
+AOP for logging ( refer LoggingAOPConfig.java)
+H2 database for in memory tables ( refer data.sql for test data)
+Swagger documentation
+Mocito for mock and junit
+
+
 
 # checkout from git
 git clone https://github.com/AjayKannan/AddressBook.git
