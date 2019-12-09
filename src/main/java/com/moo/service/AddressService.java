@@ -19,8 +19,10 @@ public class AddressService {
 	public List<AddressBean> getAddressByContactId(Long contactId) {
 
 		List<AddressEntity> addressEntityList = addressRepository.getAddressByContactId(contactId);
+		
 		List<AddressBean> addressBeanList = new ArrayList<AddressBean>();
 		
+		// map from entity bean to response bean
 		for (AddressEntity addressEntity : addressEntityList) {
 			AddressBean addressBean = new AddressBean();
 			addressBean.setAddressId(addressEntity.getId());

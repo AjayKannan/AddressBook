@@ -3,6 +3,7 @@ package com.moo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,7 +42,7 @@ public class ContactController {
 	 * @param surname
 	 *            A String to search for a contact. Surname is mandatory
 	 * 
-	 * @return A List of contacts
+	 * @return A List of matched contacts
 	 * 
 	 * @throws BadRequestException
 	 *             if surname is not passed.
@@ -49,7 +50,7 @@ public class ContactController {
 	 * @throws NoDataFoundException
 	 *             if surname does not match any record.
 	 */
-	@RequestMapping(value = "/v1/contact", method = RequestMethod.GET)
+	@RequestMapping(value = "/v1/contact", method = RequestMethod.GET,  produces = { MediaType.APPLICATION_JSON_VALUE})
 	public List<ContactBean> searchContactBySurname(@RequestParam(defaultValue = "") String surname) {
 
 		if (surname == null || surname.isEmpty()) {

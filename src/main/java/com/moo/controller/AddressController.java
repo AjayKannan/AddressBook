@@ -3,6 +3,7 @@ package com.moo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,9 +40,9 @@ public class AddressController {
 	 * @return List of Address for the give contact
 	 *
 	 * @throws NoDataFoundException
-	 *             if contact id  is not have any address.
+	 *             if contact id  does not have any address associated with it.
 	 */
-	@RequestMapping(value = "/v1/contact/{id}/address", method = RequestMethod.GET)
+	@RequestMapping(value = "/v1/contact/{id}/address", method = RequestMethod.GET ,  produces = { MediaType.APPLICATION_JSON_VALUE})
 	public List<AddressBean> getContactAddress(@PathVariable("id") long id) {
 
 		List<AddressBean> addressList = addresService.getAddressByContactId(id);

@@ -1,7 +1,10 @@
 package com.moo.bean;
 
 /**
- * @author 612082654
+ * 
+ * Bean to store address details and to used for response Json representation 
+ * 
+ * @author Ajay
  *
  */
 public class AddressBean {
