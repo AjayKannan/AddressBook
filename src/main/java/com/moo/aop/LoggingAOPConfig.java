@@ -10,9 +10,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Aspect
 @Configuration
-public class LoggingAOP {
+public class LoggingAOPConfig {
 
-	Logger logger = LogManager.getLogger(LoggingAOP.class);
+	Logger logger = LogManager.getLogger(LoggingAOPConfig.class);
 
 	@Before("execution(* com.moo.*.*.*(..))")
 	public void before(JoinPoint joinPoint) {

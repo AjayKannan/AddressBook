@@ -13,6 +13,9 @@ import com.moo.exception.BadRequestException;
 import com.moo.exception.NoDataFoundException;
 import com.moo.service.ContactService;
 
+import io.swagger.annotations.Api;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 /**
  * 
  * Controller class to manage CRUD from contact
@@ -21,6 +24,9 @@ import com.moo.service.ContactService;
  *
  */
 @RestController
+@EnableSwagger2
+@Api(tags = {"Contact"})
+
 public class ContactController {
 
 	/**

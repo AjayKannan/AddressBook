@@ -12,6 +12,9 @@ import com.moo.bean.AddressBean;
 import com.moo.exception.NoDataFoundException;
 import com.moo.service.AddressService;
 
+import io.swagger.annotations.Api;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 /**
  * 
  * Controller class to manage CRUD from contact address
@@ -20,6 +23,9 @@ import com.moo.service.AddressService;
  *
  */
 @RestController
+@EnableSwagger2
+@Api(tags = {"Address"})
+
 public class AddressController {
 
 	@Autowired
