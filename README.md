@@ -2,7 +2,7 @@
 
 # Features used
 
-Spring security with basic auth (test username=user password=passsword)
+Spring security with basic auth (test username=user password=user)
 AOP for logging ( refer LoggingAOPConfig.java)
 H2 database for in memory tables ( refer data.sql for test data)
 Swagger documentation
